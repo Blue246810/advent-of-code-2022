@@ -2,7 +2,7 @@
 # Part 1
 
 # %%
-with open("data.txt") as file:
+with open("../data/1/data.txt") as file:
     lines = file.readlines()
 
 tally = []
