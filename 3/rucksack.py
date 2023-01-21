@@ -1,8 +1,8 @@
 # %% [markdown]
 # Part 1
 #%%
-def row_to_score(row):
-    def split_string(text):
+def row_to_score(row: str) -> int:
+    def split_string(text: str) -> tuple[str, str]:
         middle_index = int(len(text)/2)
         first_half = text[0:middle_index]
         second_half = text[middle_index:]
@@ -12,7 +12,7 @@ def row_to_score(row):
     first = both_parts[0]
     second = both_parts[1]
 
-    def common_letters(first, second):
+    def common_letters(first: str, second: str) -> set[str]:
         first_set = set(first)
         second_set = set(second)
         common = first_set.intersection(second_set)
@@ -20,11 +20,12 @@ def row_to_score(row):
 
     letters_in_common = common_letters(first, second)
 
-    def letter_to_number(letter):
+    def letter_to_number(letter: str) -> int:
         if letter.islower():
             return ord(letter)-96
         if letter.isupper():
             return ord(letter)-38
+        return 0
 
     number_list = []
     for letter in letters_in_common:
