@@ -27,3 +27,10 @@ def letter_to_number(letter):
     if letter.isupper():
         return ord(letter)-38
 
+# %%
+number_list = []
+for letter in letters_in_common:
+    number = letter_to_number(letter)
+    number_list += [number]
+
+sum(number_list)
