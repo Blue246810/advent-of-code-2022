@@ -40,3 +40,7 @@ data
 
 #%%
 data['score'] = data.apply(lambda row : row_to_score(row["input"]), axis=1)
+
+# %%
+data['score'].sum()
+# %%
