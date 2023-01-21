@@ -1,7 +1,7 @@
 # %% [markdown]
 # Part 1
 # %%
-test = "abba"
+test = "abccde"
 
 def split_string(text):
     middle_index = int(len(text)/2)
@@ -9,5 +9,14 @@ def split_string(text):
     second_half = text[middle_index:]
     return (first_half, second_half)
 
-split_string(test)
-
+both_parts = split_string(test)
+first = both_parts[0]
+second = both_parts[1]
+#%%
+def common_letters(first, second):
+    first_set = set(first)
+    second_set = set(second)
+    common = first_set.intersection(second_set)
+    return common
+# %%
+common_letters(first, second)
