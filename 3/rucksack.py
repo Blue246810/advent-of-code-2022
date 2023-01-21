@@ -20,3 +20,10 @@ def common_letters(first, second):
     return common
 # %%
 common_letters(first, second)
+#%%
+def letter_to_number(letter):
+    if letter.islower():
+        return ord(letter)-96
+    if letter.isupper():
+        return ord(letter)-38
+
