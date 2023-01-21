@@ -27,10 +27,7 @@ def row_to_score(row: str) -> int:
             return ord(letter)-38
         return 0
 
-    number_list = []
-    for letter in letters_in_common:
-        number = letter_to_number(letter)
-        number_list += [number]
+    number_list = [letter_to_number(letter) for letter in letters_in_common]
 
     return sum(number_list)
 
