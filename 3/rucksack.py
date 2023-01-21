@@ -9,8 +9,6 @@ def row_to_score(row: str) -> int:
         return (first_half, second_half)
 
     both_parts = split_string(row)
-    first = both_parts[0]
-    second = both_parts[1]
 
     def common_letters(first: str, second: str) -> set[str]:
         first_set = set(first)
@@ -18,7 +16,7 @@ def row_to_score(row: str) -> int:
         common = first_set.intersection(second_set)
         return common
 
-    letters_in_common = common_letters(first, second)
+    letters_in_common = common_letters(both_parts[0], both_parts[1])
 
     def letter_to_number(letter: str) -> int:
         if letter.islower():
