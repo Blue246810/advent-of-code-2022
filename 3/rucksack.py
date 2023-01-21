@@ -33,3 +33,10 @@ def row_to_score(row):
 
     return sum(number_list)
 
+# %%
+import pandas as pd
+data = pd.read_csv("../data/3/data.txt", names=["input"], sep=" ")
+data
+
+#%%
+data['score'] = data.apply(lambda row : row_to_score(row["input"]), axis=1)
