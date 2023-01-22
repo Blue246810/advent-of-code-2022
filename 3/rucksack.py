@@ -56,11 +56,11 @@ combined_number_list: list[int] = []
 for row in data['input']:
     if len(group) < 3:
         group.append(row)
-    if len(group) > 2:
         first = group[0]
         second = group[1]
         third = group[2]
         letters_in_common_two = common_letters_two(first, second, third)
+    else:
         numbers = [letter_to_number(letter) for letter in letters_in_common_two]
         combined_number_list.append(sum(numbers))
         group = []
