@@ -1,5 +1,13 @@
 # %% [markdown]
 # Part 1
+#%%    
+def letter_to_number(letter: str) -> int:
+    if letter.islower():
+        return ord(letter)-96
+    if letter.isupper():
+        return ord(letter)-38
+    return 0
+
 #%%
 def row_to_score(row: str) -> int:
     def split_string(text: str) -> tuple[str, str]:
@@ -17,13 +25,6 @@ def row_to_score(row: str) -> int:
         return common
 
     letters_in_common = common_letters(both_parts[0], both_parts[1])
-
-    def letter_to_number(letter: str) -> int:
-        if letter.islower():
-            return ord(letter)-96
-        if letter.isupper():
-            return ord(letter)-38
-        return 0
 
     number_list = [letter_to_number(letter) for letter in letters_in_common]
 
