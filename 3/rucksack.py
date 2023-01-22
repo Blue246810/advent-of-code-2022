@@ -41,3 +41,12 @@ data['score'] = data.apply(lambda row : row_to_score(row["input"]), axis=1)
 # %%
 data['score'].sum()
 # %%
+# Part 2
+#%%
+def common_letters_two(first: str, second: str, third: str) -> set[str]:
+    first_set = set(first)
+    second_set = set(second)
+    third_set = set(third)
+    common = first_set.intersection(second_set).intersection(third_set)
+    return common
+
