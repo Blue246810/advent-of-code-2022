@@ -51,3 +51,11 @@ def range_contained_two(low1, high1, low2, high2):
     else:
         0
 
+#%%
+data_combined['range_contained2'] = data_combined.apply(lambda row : range_contained_two(row["elf1low"], row["elf1high"], row["elf2low"], row["elf2high"]), axis=1)
+data_combined
+
+# %%
+data_combined['range_contained2'].count()
+
+# %%
