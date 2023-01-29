@@ -15,3 +15,8 @@ def splitcol(column_name, name):
     data[name + "high"] = data[name + "high"].astype(int)
     return data
 
+#%%
+data_elf1 = splitcol(data["elf1"], "elf1")
+data_elf2 = splitcol(data["elf2"], "elf2")
+data_combined = pd.concat([data_elf1,data_elf2], axis=1)
+
