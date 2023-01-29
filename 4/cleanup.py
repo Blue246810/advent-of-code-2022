@@ -20,3 +20,12 @@ data_elf1 = splitcol(data["elf1"], "elf1")
 data_elf2 = splitcol(data["elf2"], "elf2")
 data_combined = pd.concat([data_elf1,data_elf2], axis=1)
 
+#%%
+def range_contained(low1, high1, low2, high2):
+    if high2 <= high1 and low2 >= low1: 
+        return 1
+    elif high1 <= high2 and low1 >= low2:
+        return 1
+    else:
+        0
+
