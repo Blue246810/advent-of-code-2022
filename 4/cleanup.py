@@ -35,3 +35,19 @@ data_combined['range_contained'] = data_combined.apply(lambda row : range_contai
 # %%
 data_combined['range_contained'].count()
 
+#%% [markdown]
+# Part 2
+
+#%%
+def range_contained_two(low1, high1, low2, high2):
+    if high2 <= high1 and low2 >= low1: 
+        return 1
+    elif high1 <= high2 and low1 >= low2:
+        return 1
+    elif low2 >= low1 and low2 <= high1:
+        return 1
+    elif low1 >= low2 and low1 <= high2:
+        return 1
+    else:
+        0
+
