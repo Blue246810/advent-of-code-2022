@@ -24,3 +24,8 @@ for _,col in data.iteritems():
 #%%
 data_beyond_break = pd.read_csv("../data/5/data.txt", header=None, skiprows=break_position+1, sep=" ")
 
+#%%
+blocks_to_move = data_beyond_break[1]
+start_pos = data_beyond_break[3]
+end_pos = data_beyond_break[5]
+
