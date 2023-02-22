@@ -9,3 +9,7 @@ with open("../data/5/data.txt") as file:
             end_char = int(line[-1])
             break_position = position
 
+#%%
+import pandas as pd
+data = pd.read_fwf("../data/5/data.txt", widths=[4] * end_char, header=None, nrows=break_position)
+
