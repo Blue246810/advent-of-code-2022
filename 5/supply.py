@@ -21,3 +21,6 @@ for _,col in data.iteritems():
     non_na_list.reverse()
     col_list += [non_na_list]
 
+#%%
+data_beyond_break = pd.read_csv("../data/5/data.txt", header=None, skiprows=break_position+1, sep=" ")
+
