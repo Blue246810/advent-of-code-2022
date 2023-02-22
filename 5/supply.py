@@ -46,3 +46,8 @@ for i in range(len(blocks_to_move)):
     working_col_list[from_where] = from_list
     working_col_list[to_where] = to_list
 
+comb = []
+for bucket in working_col_list:
+    comb += bucket[-1:]
+test = ''.join(str(element) for element in comb)
+print(''.join(letter for letter in test if letter.isalpha()))
