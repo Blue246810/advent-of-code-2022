@@ -13,3 +13,11 @@ with open("../data/5/data.txt") as file:
 import pandas as pd
 data = pd.read_fwf("../data/5/data.txt", widths=[4] * end_char, header=None, nrows=break_position)
 
+#%%
+col_list: list[list[str]] = []
+for _,col in data.iteritems():
+    non_na_series = col.dropna()
+    non_na_list = non_na_series.to_list()
+    non_na_list.reverse()
+    col_list += [non_na_list]
+
