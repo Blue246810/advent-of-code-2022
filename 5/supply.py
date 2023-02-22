@@ -29,3 +29,20 @@ blocks_to_move = data_beyond_break[1]
 start_pos = data_beyond_break[3]
 end_pos = data_beyond_break[5]
 
+#%%
+import copy
+working_col_list = copy.copy(col_list)
+for i in range(len(blocks_to_move)):
+    how_many_to_move = blocks_to_move[i]
+    from_where = start_pos[i]-1
+    to_where = end_pos[i]-1
+    from_list = working_col_list[from_where]
+    to_list = working_col_list[to_where]
+    new_additions = from_list[-how_many_to_move:]
+    # new_additions.reverse() PART 1
+    from_list = from_list[0:len(from_list)-how_many_to_move]
+    to_list = to_list + new_additions
+    
+    working_col_list[from_where] = from_list
+    working_col_list[to_where] = to_list
+
