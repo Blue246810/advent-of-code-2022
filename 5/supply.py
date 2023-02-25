@@ -27,17 +27,15 @@ for _,col in data.iteritems():
 #%%
 data_beyond_break = pd.read_csv(DATA_PATH, header=None, skiprows=break_position+1, sep=" ")
 #%%
-blocks_to_move = data_beyond_break[1]
-start_pos = data_beyond_break[3]
-end_pos = data_beyond_break[5]
+test_zip = zip(data_beyond_break[1], data_beyond_break[3], data_beyond_break[5])
 
 #%%
 import copy
 working_col_list = copy.copy(col_list)
-for i in range(len(blocks_to_move)):
-    how_many_to_move = blocks_to_move[i]
-    from_where = start_pos[i]-1
-    to_where = end_pos[i]-1
+for (how_many_to_move, from_where, to_where) in test_zip:
+    print(how_many_to_move, from_where, to_where)
+    from_where -= 1
+    to_where -= 1
     from_list = working_col_list[from_where]
     to_list = working_col_list[to_where]
     new_additions = from_list[-how_many_to_move:]
@@ -47,7 +45,7 @@ for i in range(len(blocks_to_move)):
     
     working_col_list[from_where] = from_list
     working_col_list[to_where] = to_list
-
+#%%
 comb = []
 for bucket in working_col_list:
     comb += bucket[-1:]
