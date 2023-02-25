@@ -1,8 +1,11 @@
 #%% [markdown]
 # Part 1
+
+#%%
+DATA_PATH = "../data/5/data.txt"
 #%%
 break_position = 0
-with open("../data/5/data.txt") as file:
+with open(DATA_PATH) as file:
     lines = [line.rstrip() for line in file]
     for position,line in enumerate(lines):
         if line.startswith(" 1 "):
@@ -11,7 +14,7 @@ with open("../data/5/data.txt") as file:
 
 #%%
 import pandas as pd
-data = pd.read_fwf("../data/5/data.txt", widths=[4] * end_char, header=None, nrows=break_position)
+data = pd.read_fwf(DATA_PATH, widths=[4] * end_char, header=None, nrows=break_position)
 
 #%%
 col_list: list[list[str]] = []
@@ -22,8 +25,7 @@ for _,col in data.iteritems():
     col_list += [non_na_list]
 
 #%%
-data_beyond_break = pd.read_csv("../data/5/data.txt", header=None, skiprows=break_position+1, sep=" ")
-
+data_beyond_break = pd.read_csv(DATA_PATH, header=None, skiprows=break_position+1, sep=" ")
 #%%
 blocks_to_move = data_beyond_break[1]
 start_pos = data_beyond_break[3]
