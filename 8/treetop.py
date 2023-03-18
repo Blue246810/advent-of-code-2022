@@ -61,3 +61,20 @@ def distance_entry_to_tree(direction, entry):
             break
     return number_of_trees
 
+tree_list = []
+for row_number, row in trees.iterrows():
+ 
+    for col_number, entry in enumerate(row): 
+        above = trees[0: row_number][col_number][::-1]
+        below = trees[row_number+1: ][col_number]
+        left = trees.iloc[row_number][0: col_number][::-1]
+        right = trees.iloc[row_number][col_number+1: ]
+
+        above_no = distance_entry_to_tree(above, entry)
+        below_no = distance_entry_to_tree(below, entry)
+        left_no = distance_entry_to_tree(left, entry)
+        right_no = distance_entry_to_tree(right, entry)
+        total = above_no * below_no * left_no * right_no
+        tree_list += [total]
+
+max(tree_list)
