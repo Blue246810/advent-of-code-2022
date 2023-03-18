@@ -44,3 +44,20 @@ for row_number, row in trees.iterrows():
             counter += 1
 counter
 
+# %% [markdown]
+# PART 2
+
+# %%
+# Create function to find number of trees between entry and tree >= entry
+def distance_entry_to_tree(direction, entry):
+    number_of_trees = 0
+    for tree in direction:
+        if tree < entry:
+            number_of_trees += 1
+        elif tree == entry:
+            number_of_trees += 1
+            break
+        else:
+            break
+    return number_of_trees
+
