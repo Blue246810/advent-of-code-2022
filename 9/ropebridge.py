@@ -43,3 +43,6 @@ for row in lines:
             else:
                 tail = (head[0],tail[1]-1)
 
+        # add each tail position to tail_pos list
+        tail_pos += [tail]
+
