@@ -46,3 +46,4 @@ for row in lines:
         # add each tail position to tail_pos list
         tail_pos += [tail]
 
+print(len(set(tail_pos)))
