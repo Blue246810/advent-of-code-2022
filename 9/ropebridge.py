@@ -29,3 +29,17 @@ for row in lines:
         else:
             head = (head[0], head[1]-1)
 
+        # where tail moves to
+        x_dist = abs(head[0]- tail[0])
+        y_dist = abs(head[1]- tail[1])
+
+        if x_dist > allowable_distance or y_dist > allowable_distance:
+            if direction == "R":
+                tail = (tail[0]+1,head[1])
+            elif direction == "L":
+                tail = (tail[0]-1,head[1])
+            elif direction == "U":
+                tail = (head[0],tail[1]+1)
+            else:
+                tail = (head[0],tail[1]-1)
+
